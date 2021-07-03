@@ -20,18 +20,20 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top">AxeHammer</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-nav nav-link py-3 px-0 px-lg-3 rounded" style="color: white;" href="#page-top">AxeHammer</a>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#randomize" onclick="randomize()">Randomize</a></li>
+                </ul>
+                <!-- <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#randomize" onclick="randomize()">Randomize</a></li>
-<!--                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>-->
-<!--                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>-->
+
                     </ul>
-                </div>
+                </div> -->
             </div>
         </nav>
         <!-- Masthead-->
@@ -63,8 +65,12 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
+                <div class="row">
+                  <div class="col-12 text-center">
                     <img src="./assets/img/portfolio/game.png" class="img-fluid" alt="image" id="warbandArt">
+                    <br>
+                      <img src="./assets/Hourglass.gif" alt="loading" id="loadingArt" width="100" height="100" class="hidden">
+                  </div>
                 </div>
             </div>
         </section>
@@ -129,11 +135,27 @@
 
             ];
 
+            // function showResults(){
+            //   let rand = getRandomInt(0,4);
+            //   document.getElementById("warbandName").innerHTML = Data[rand].name;
+            //   document.getElementById('warbandArt').setAttribute('src', "./artwork/" + Data[rand].img );
+            // }
+
                 function randomize() {
+                    document.getElementById("warbandName").innerHTML = " ";
+                    document.getElementById("warbandArt").classList.add("hidden");
+                    document.getElementById("loadingArt").classList.remove("hidden");
+
+                    setTimeout(function(){
                     let rand = getRandomInt(0,4);
                     document.getElementById("warbandName").innerHTML = Data[rand].name;
-                    document.getElementById('warbandArt').setAttribute('src', "./artwork/" + Data[rand].img );
+                    document.getElementById('warbandArt').setAttribute('src', "./artwork/" + Data[rand].img )
+                    document.getElementById("warbandArt").classList.remove("hidden");
+                    document.getElementById("loadingArt").classList.add("hidden");
+                    }, 2000);
             }
+
+
         </script>
     </body>
 </html>
