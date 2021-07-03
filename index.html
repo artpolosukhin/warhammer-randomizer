@@ -135,6 +135,22 @@
 
             ];
 
+
+            const Phrases = [
+                {id:0, text:"Loading.."},
+                {id:1, text:"Randomizing"},
+                {id:2, text:"Getting ready to fight"},
+                {id:3, text:"Magic in progress"},
+                {id:4, text:"Crystal ball says.."},
+                {id:5, text:"Cleaning tables"},
+                {id:6, text:"O Mighty God of Random heed my call!"},
+                {id:7, text:"Wait for it.."},
+                {id:8, text:"It`s time to win with.."},
+
+            ];
+
+
+
             // function showResults(){
             //   let rand = getRandomInt(0,4);
             //   document.getElementById("warbandName").innerHTML = Data[rand].name;
@@ -142,7 +158,8 @@
             // }
 
                 function randomize() {
-                    document.getElementById("warbandName").innerHTML = " ";
+                  let rand = getRandomInt(0,8);
+                    document.getElementById("warbandName").innerHTML = Phrases[rand].text;
                     document.getElementById("warbandArt").classList.add("hidden");
                     document.getElementById("loadingArt").classList.remove("hidden");
 
