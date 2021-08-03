@@ -131,7 +131,8 @@
                 {id:1, name:"Thorns of the Briar Queen", img:"thorns_of_the_briar_queen.jpg"},
                 {id:2, name:"Ironskulls Boyz", img:"Ironskulls-Boyz.jpg"},
                 {id:3, name:"Ylthari Guardians", img:"ylthari-s-guardians.jpg"},
-                {id:4, name:"Elathains Soulraid", img:"elathains-soulraid.jpg"}
+                {id:4, name:"Elathains Soulraid", img:"elathains-soulraid.jpg"},
+                {id:5, name:"Crimson Court", img:"crimsoncourt.jpg"}
 
             ];
 
@@ -164,7 +165,7 @@
                     document.getElementById("loadingArt").classList.remove("hidden");
 
                     setTimeout(function(){
-                    let rand = getRandomInt(0,4);
+                    let rand = getRandomInt(0,5);
                     document.getElementById("warbandName").innerHTML = Data[rand].name;
                     document.getElementById('warbandArt').setAttribute('src', "./artwork/" + Data[rand].img )
                     document.getElementById("warbandArt").classList.remove("hidden");
